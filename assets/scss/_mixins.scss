@@ -1,0 +1,8 @@
+@mixin highlighted($font-size) {
+  display: inline-block;
+  color: $highlight-text-color;
+  padding: 0 1.25rem;
+  border-radius: calc(#{$font-size} * #{$landing-title-line-height} / 2);
+  border: 1px solid $highlight-text-color;
+  font-weight: $landing-title-font-weight;
+}
