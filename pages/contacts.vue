@@ -1,11 +1,11 @@
 <template>
-  <svg-icon name="logo" />
+  <div class="contacts"></div>
 </template>
 
 <script>
 export default {
-  name: 'Logo',
-}
+  name: 'Contacts',
+};
 </script>
 
 <style scoped lang="scss"></style>

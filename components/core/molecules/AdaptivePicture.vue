@@ -59,6 +59,7 @@ export default {
 <style scoped lang="scss">
 .adaptive-picture {
   display: block;
+  background-color: $placeholder-color;
   > img {
     display: block;
     max-width: 100%;

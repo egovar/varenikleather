@@ -11,10 +11,10 @@ const pages = [
     name: 'Контакты',
     link: '/contacts',
   },
-  {
-    name: 'Блог',
-    link: '/news',
-  },
+  // {
+  //   name: 'Блог',
+  //   link: '/news',
+  // },
 ];
 
 export default pages;

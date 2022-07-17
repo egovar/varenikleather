@@ -9,7 +9,7 @@
         Всем привет! Меня зовут Игорь, я занимаюсь изготовлением изделий из кожи
         уже около 10 лет. В 2013 году мы с моей женой Надеждой открыли
         собственную мастерскую, где каждый может заказать эксклюзивную вещь из
-        натуральной кожи, подходящую именно вам
+        натуральной кожи, подходящую именно ему
       </p>
       <NuxtLink to="/products" class="intro__link">
         Изделия
@@ -62,15 +62,7 @@ export default {
   }
 
   &__link {
-    font-size: 1.5rem;
-    line-height: 1.16;
-    display: inline-flex;
-    align-items: center;
-    > .icon {
-      height: 1.74rem;
-      width: 1.25rem;
-      margin-left: 0.625rem;
-    }
+    @include link-with-arrow;
   }
 
   &__part {
@@ -97,6 +89,8 @@ export default {
 
   &__photo {
     width: 25rem;
+    border-radius: 1.25rem;
+
     ::v-deep(img) {
       border-radius: 1rem;
     }
