@@ -5,7 +5,7 @@
         name="pipe.jpg"
         alt="Курительная трубка на кожаном чехле
       для курительных принадлежностей"
-        class="grid__item grid__item--first"
+        class="grid__item grid__item--first history__picture"
       />
       <h2
         class="history__text history__text--bold grid__item grid__item--second"
@@ -27,12 +27,12 @@
         name="watch.jpg"
         alt="Часы с кожаным ремешком лежат на деревянном столе рядом с
       кошельком из натуральной кожи"
-        class="grid__item grid__item--fifth"
+        class="grid__item grid__item--fifth history__picture"
       />
       <AdaptivePicture
         name="wallet.jpg"
         alt="Грубо сшитый кошелёк из натуральной кожи лежит на деревянном столе в окружении инструментов кожевника"
-        class="grid__item grid__item--sixth"
+        class="grid__item grid__item--sixth history__picture"
       />
       <p
         class="history__text history__text--bold grid__item grid__item--seventh"
@@ -48,6 +48,73 @@
         продавать людям то, чем я бы сам побрезговал пользоваться - это
         противоречит моим принципам
       </p>
+    </div>
+    <div class="history__part history__part--second">
+      <AdaptivePicture
+        name="workshop.jpg"
+        alt="Кожевенная мастерская в состоянии творческого беспорядка"
+        class="history__picture"
+      />
+      <p class="history__text">
+        Тогда я вспомнил про ателье. Да, в магазинах теперь можно найти вещи под
+        любую фигуру, но всё равно чего-то не хватает… Здесь топорщится нитка,
+        тут ручка у сумки пришита очень ненадежным швом - и так всегда, ни
+        одного исключения. Не хватало внимания к таким мелочам и уникальности,
+        индивидуального подхода - у корпораций нет на это времени. А у меня есть
+        - мне это важно!
+      </p>
+    </div>
+    <div class="history__part history__part--third">
+      <AdaptivePicture
+        name="cover.jpg"
+        alt="Обложка для паспорта из натуральной кожи в окружении инструментов кожевника"
+        class="history__picture"
+      />
+      <p class="history__text">
+        Моя жена, Надежда, поддержала меня в этом начинании. Более того, идея с
+        нанесением на каждое изделие неповторимого рисунка целиком принадлежит
+        ей. Мы оба погрузились в изучение техник работы с кожей. Надежда стала
+        нашим художником и дизайнером, а я снова взял на себя роль кожевника -
+        обожаю работать руками и видеть, как материал превращается в настоящую
+        Вещь с большой буквы.
+      </p>
+    </div>
+    <div class="history__part history__part--fourth">
+      <AdaptivePicture
+        name="holes.jpg"
+        alt="Пробивание отверстий в куске кожи с помощью специального пробойника"
+        class="history__picture"
+      />
+      <p class="history__text history__text--bold">
+        Это - одна из причин по которой мы отказались от любой автоматизации,
+        даже от швейных машинок. Они не дают настолько качественного шва, как
+        руки мастера. Может быть и мелочь - но важная!
+      </p>
+    </div>
+    <p class="history__part history__part--fifth history__text">
+      Наши усилия не прошли даром - уже очень скоро мы получили первый заказ.
+      Было трудно, но оно 100% того стоило. Наверное, это самая приятная часть
+      моей работы - видеть счастливое лицо человека, который получил Настоящую
+      Вещь, что-то, принадлежащее только ему.
+    </p>
+    <div class="history__part history__part--sixth">
+      <AdaptivePicture
+        name="table.jpg"
+        alt="Рабочий стол кожевника с циркулем и готовым изделием"
+        class="history__picture"
+      />
+      <div class="history__part-text">
+        <p class="history__text history__text--bold">
+          Когда дизайнер рисовал этот сайт, он спросил: кто мой типичный клиент?
+          Для кого мы делаем сайт?
+        </p>
+        <p class="history__text">
+          И мне трудно ответить на этот вопрос в современных терминах - мои
+          клиенты это абсолютно разные люди из разных стран, это и богатые
+          бизнесмены, и не очень богатые наемные рабочие, домохозяйки… Они все
+          разные. Они все личности. Просто сделай красиво и с душой.
+        </p>
+      </div>
     </div>
   </section>
 </template>
@@ -126,6 +193,67 @@ export default {
         grid-column: 2/4;
         grid-row: 7;
         margin-top: 1.25rem;
+      }
+    }
+  }
+
+  &__part {
+    &:not(.grid) {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+    }
+    &--second {
+      margin-top: 9.375rem;
+      > .history__text {
+        width: 33.625rem;
+      }
+      > .history__picture {
+        width: 41.0625rem;
+        height: 41.5rem;
+      }
+    }
+    &--third {
+      margin-top: 15.75rem;
+      > .history__text {
+        width: 33.625rem;
+        margin-top: 2.375rem;
+      }
+      > .history__picture {
+        width: 17.1875rem;
+        height: 24.5625rem;
+        margin-right: 14.5rem;
+      }
+    }
+    &--fourth {
+      flex-direction: row !important;
+      align-items: center;
+      margin-top: 0.75rem;
+      & > .history__text {
+        width: 41.5rem;
+        padding-top: 3.625rem;
+      }
+      & > .history__picture {
+        width: 17.1875rem;
+        height: 24.5rem;
+      }
+    }
+    &--fifth {
+      width: 33.625rem;
+      margin: 11.8125rem auto 9.3125rem 10.185rem;
+    }
+    &--sixth {
+      align-items: center;
+      margin-bottom: 15.25rem;
+      .history__text {
+        width: 33.625rem;
+      }
+      .history__text + .history__text {
+        margin-top: 1.875rem;
+      }
+      > .history__picture {
+        width: 41.5rem;
+        height: 40rem;
       }
     }
   }
