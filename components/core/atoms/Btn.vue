@@ -1,5 +1,10 @@
 <template>
-  <button :type="type" class="button" :disabled="disabled" @click.prevent>
+  <button
+    :type="type"
+    class="button"
+    :disabled="disabled"
+    @click.prevent="$emit('click')"
+  >
     {{ text }}
   </button>
 </template>

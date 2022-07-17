@@ -19,7 +19,7 @@
           </a>
         </div>
       </div>
-      <form class="footer__form">
+      <form id="form" class="footer__form">
         <Input v-model="name" label="Имя" />
         <Input v-model="phone" label="Телефон" />
         <Input v-model="comment" label="Комментарий" />
@@ -81,33 +81,7 @@ export default {
   }
 
   &__icon {
-    width: 1.875rem;
-    height: 1.875rem;
-    display: inline-flex;
-    align-items: center;
-
-    &--logo {
-      width: $logo-width-desktop;
-      height: $logo-height-desktop;
-    }
-
-    &--vk {
-      height: 1.09375rem;
-    }
-
-    &--tg {
-      width: 1.640625rem;
-      height: 1.375rem;
-    }
-
-    &--ig {
-      width: 1.71875rem;
-      height: 1.71875rem;
-    }
-
-    &--tt {
-      width: 1.640625rem;
-    }
+    @include icons;
   }
 
   &__media-links {

@@ -1,5 +1,9 @@
 const pages = [
   {
+    name: 'Главная',
+    link: '/',
+  },
+  {
     name: 'История бренда',
     link: '/history',
   },

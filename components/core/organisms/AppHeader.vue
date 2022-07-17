@@ -6,9 +6,10 @@
       </NuxtLink>
       <nav class="header__navigation">
         <NuxtLink
-          v-for="page in pages"
+          v-for="(page, i) in pages"
           :key="page.link"
           :to="page.link"
+          :exact="!i"
           class="header__navigation-link"
         >
           {{ page.name }}
