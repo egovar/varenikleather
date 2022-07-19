@@ -1,0 +1,99 @@
+<template>
+  <section class="intro">
+    <div class="intro__part intro__part--left">
+      <h1 class="intro__title">
+        <strong>Семейная</strong>
+        <span>мастерская</span>
+      </h1>
+      <p class="intro__description">
+        Всем привет! Меня зовут Игорь, я занимаюсь изготовлением изделий из кожи
+        уже около 10 лет. В 2013 году мы с моей женой Надеждой открыли
+        собственную мастерскую, где каждый может заказать эксклюзивную вещь из
+        натуральной кожи, подходящую именно ему
+      </p>
+      <NuxtLink to="/products" class="intro__link">
+        Изделия
+        <svg-icon name="arrow_right" />
+      </NuxtLink>
+    </div>
+    <div class="intro__part intro__part--right">
+      <!--      <div class="intro__spot"></div>-->
+      <AdaptivePicture
+        name="artisans.jpg"
+        alt="Фото наших мастеров: Игоря и Надежды"
+        class="intro__photo"
+      />
+    </div>
+  </section>
+</template>
+
+<script>
+import AdaptivePicture from '@/components/core/molecules/AdaptivePicture';
+export default {
+  name: 'Intro',
+  components: { AdaptivePicture },
+};
+</script>
+
+<style scoped lang="scss">
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    font-family: $landing-title-font;
+    font-size: 5.5rem;
+    font-weight: $landing-title-font-weight;
+    text-transform: uppercase;
+    > strong {
+      @include highlighted(5.5rem);
+    }
+    > span {
+      display: block;
+      margin-left: 7.625rem;
+    }
+  }
+
+  &__description {
+    line-height: 1.22;
+    margin: 1.875rem 0 0.625rem;
+    max-width: 39.75rem;
+  }
+
+  &__link {
+    @include link-with-arrow;
+  }
+
+  &__part {
+    &--right {
+      position: relative;
+    }
+  }
+
+  &__spot {
+    position: absolute;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 230, 0, 0.8) -1.21%,
+      rgba(255, 122, 0, 0.8) 99.35%
+    );
+    filter: blur(260px);
+    transform: rotate(150deg);
+    width: 47rem;
+    height: 7.5rem;
+    top: 50%;
+    right: 45%;
+    z-index: 1;
+  }
+
+  &__photo {
+    width: 25rem;
+    border-radius: 1.25rem;
+
+    ::v-deep(img) {
+      border-radius: 1rem;
+    }
+  }
+}
+</style>

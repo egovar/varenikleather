@@ -1,0 +1,35 @@
+$main-bg-color: #212121;
+$main-text-color: #f0f0f0;
+$highlight-text-color: #ff0000;
+$placeholder-color: #c4c4c4;
+$secondary-text-color: rgba(255, 255, 255, 0.2);
+$main-font: Roboto, Arial, sans-serif;
+$main-font-size: 1.125rem;
+$main-font-weight: 300;
+$landing-title-font-weight: 400;
+$landing-title-line-height: 1.216;
+$bold-font-weight: 500;
+$landing-title-font: 'Cormorant Infant', 'Times New Roman', serif;
+
+$footer-font-size: 1.5rem;
+$footer-padding-top: 3.125rem;
+$footer-padding-bottom: 5.25rem;
+$footer-form-height: 18.75rem;
+$input-base-padding: 0.3125rem;
+$input-padding: 0.75rem;
+$transition-style: 0.25s ease;
+$button-padding: 0.75rem;
+$footer-height: calc(
+  #{$footer-form-height} + #{$footer-padding-top} + #{$footer-padding-bottom}
+);
+
+$logo-width-desktop: 4.375rem;
+$logo-height-desktop: 3.9375rem;
+$header-padding-top-desktop: 3.75rem;
+$header-padding-bottom-desktop: 3.125rem;
+$header-height-desktop: calc(
+  #{$logo-height-desktop} + #{$header-padding-top-desktop} + #{$header-padding-bottom-desktop}
+);
+$content-min-height: calc(
+  100vh - #{$header-height-desktop} - #{$footer-height}
+);

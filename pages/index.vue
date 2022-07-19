@@ -1,23 +1,19 @@
 <template>
-  <div class="ab">
-    fkrejfj <span class="cd">hfh</span>
-    <Logo />
+  <div class="index">
+    <Intro />
+    <AboutUs />
+    <FAQ />
   </div>
 </template>
 
 <script>
-import Logo from '@/components/logo'
-
+import Intro from '@/components/Intro';
+import AboutUs from '@/components/AboutUs';
+import FAQ from '@/components/FAQ';
 export default {
   name: 'Index',
-  components: { Logo },
-}
+  components: { FAQ, AboutUs, Intro },
+};
 </script>
 
-<style scoped lang="scss">
-.ab {
-  > .cd {
-    color: $color;
-  }
-}
-</style>
+<style scoped lang="scss"></style>
