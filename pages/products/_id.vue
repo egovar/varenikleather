@@ -32,7 +32,6 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 import AdaptivePicture from '@/components/core/molecules/AdaptivePicture';
 import Btn from '@/components/core/atoms/Btn';
 import { getProductById } from '@/api/products';
