@@ -8,14 +8,18 @@
 
 <script>
 import Card from '@/components/core/organisms/Card';
-import products from '@/const/products';
+import { getProducts } from '@/api/products';
+
 export default {
   name: 'Products',
   components: { Card },
   data() {
     return {
-      products,
+      products: [],
     };
+  },
+  async fetch() {
+    this.products = await getProducts();
   },
 };
 </script>

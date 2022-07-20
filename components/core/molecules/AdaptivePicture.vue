@@ -43,14 +43,18 @@ export default {
   },
   computed: {
     picture() {
-      const [name, type] = this.name.split('.');
-      return { name, type };
+      const [nameWithIndex, type] = this.name.split('.');
+      const [name, index] = nameWithIndex.split('-');
+      return { name, type, index };
     },
   },
   methods: {
     path(size) {
       // 'small' | 'medium' | 'large'
-      return `/img/${this.folder}/${this.picture.name}/${this.picture.name}-${size}.${this.picture.type}`;
+      if (this.folder === 'landing') {
+        return `/img/${this.folder}/${this.picture.name}/${this.picture.name}-${size}.${this.picture.type}`;
+      }
+      return `/img/${this.folder}/${this.picture.name}/${this.picture.index}/${this.picture.name}-${size}.${this.picture.type}`;
     },
   },
 };

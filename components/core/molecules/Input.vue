@@ -10,6 +10,7 @@
       @focus="focused = true"
       @focusout="focused = false"
     />
+    <span v-if="required" class="input__subtext">Обязательное поле</span>
   </label>
 </template>
 
@@ -27,6 +28,10 @@ export default {
     label: {
       type: String,
       required: true,
+    },
+    required: {
+      type: Boolean,
+      default: false,
     },
   },
   data() {
@@ -57,6 +62,13 @@ export default {
       transform: translateY(-#{$input-padding});
       font-size: calc(#{$footer-font-size} / 2);
     }
+  }
+  &__subtext {
+    font-size: calc(#{$footer-font-size} / 2);
+    color: $secondary-text-color;
+    position: absolute;
+    bottom: -0.25rem;
+    right: 0;
   }
 }
 </style>

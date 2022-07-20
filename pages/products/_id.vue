@@ -1,5 +1,5 @@
 <template>
-  <div class="listing">
+  <div v-if="product.name" class="listing">
     <section class="listing__info">
       <h1 class="listing__title">{{ product.name }}</h1>
       <p class="listing__price">От {{ product.price }} р.</p>
@@ -35,27 +35,18 @@
 import { mapGetters } from 'vuex';
 import AdaptivePicture from '@/components/core/molecules/AdaptivePicture';
 import Btn from '@/components/core/atoms/Btn';
+import { getProductById } from '@/api/products';
+
 export default {
   name: 'Listing',
   components: { Btn, AdaptivePicture },
   data() {
     return {
-      product: {
-        id: 2,
-        name: 'Мужской кошелек от дольче габана съел кабана',
-        description:
-          'От такое описание нааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа ьпдльекп еклдпьдкеьлпдлье  еклпьепьлдлкеь екплдьекдпльдлкеьп еклпьекдлпь',
-        price: 500000,
-        categoryName: 'Кошельки',
-        color: 'Коричневый',
-        seoDescription: 'Мужской кошелек от дольче габана съел кабана',
-        size: '200x100x15',
-        photos: ['cover.jpg', 'pipe.jpg', 'wallet.jpg', 'watch.jpg'],
-      },
+      product: {},
     };
   },
-  computed: {
-    ...mapGetters('core', ['isDesktop']),
+  async fetch() {
+    this.product = await getProductById();
   },
   methods: {
     toForm() {
@@ -125,11 +116,12 @@ export default {
     grid-template-columns: repeat(2, 19.8125rem);
     grid-auto-rows: 25.125rem;
     gap: 1.25rem 1.875rem;
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    overflow-x: hidden;
+    //-ms-overflow-style: none; /* IE and Edge */
+    //scrollbar-width: none; /* Firefox */
+    //&::-webkit-scrollbar {
+    //  display: none;
+    //}
   }
   &__photo {
     &:first-child {
