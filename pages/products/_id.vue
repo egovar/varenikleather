@@ -1,5 +1,5 @@
 <template>
-  <div class="listing">
+  <div v-if="product.name" class="listing">
     <section class="listing__info">
       <h1 class="listing__title">{{ product.name }}</h1>
       <p class="listing__price">От {{ product.price }} р.</p>
@@ -22,8 +22,9 @@
       <AdaptivePicture
         v-for="(photo, i) in product.photos"
         :key="i"
+        :product-id="product.alias"
         :name="photo"
-        :alt="product.seoDescription"
+        :alt="product.description"
         folder="products"
         class="listing__photo"
       />
@@ -32,30 +33,25 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
 import AdaptivePicture from '@/components/core/molecules/AdaptivePicture';
 import Btn from '@/components/core/atoms/Btn';
+import { getProductById } from '@/api/products';
+
 export default {
   name: 'Listing',
   components: { Btn, AdaptivePicture },
   data() {
     return {
-      product: {
-        id: 2,
-        name: 'Мужской кошелек от дольче габана съел кабана',
-        description:
-          'От такое описание нааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааааа ьпдльекп еклдпьдкеьлпдлье  еклпьепьлдлкеь екплдьекдпльдлкеьп еклпьекдлпь',
-        price: 500000,
-        categoryName: 'Кошельки',
-        color: 'Коричневый',
-        seoDescription: 'Мужской кошелек от дольче габана съел кабана',
-        size: '200x100x15',
-        photos: ['cover.jpg', 'pipe.jpg', 'wallet.jpg', 'watch.jpg'],
-      },
+      product: {},
     };
   },
+  async fetch() {
+    this.product = await getProductById(this.productId);
+  },
   computed: {
-    ...mapGetters('core', ['isDesktop']),
+    productId() {
+      return this.$route.params.id;
+    },
   },
   methods: {
     toForm() {
@@ -71,6 +67,7 @@ export default {
   //overflow: hidden;
   display: flex;
   margin-bottom: 6.25rem;
+
   &__info {
     width: 33.625rem;
     margin-right: 6.125rem;
@@ -113,24 +110,28 @@ export default {
   &__grid-label {
     font-weight: $bold-font-weight;
   }
+
   &__grid-value {
     &--underlined {
       text-decoration: underline;
     }
   }
+
   &__photos {
     height: 55rem;
     overflow: auto;
     display: grid;
-    grid-template-columns: repeat(2, 19.8125rem);
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 25.125rem;
     gap: 1.25rem 1.875rem;
+    overflow-x: hidden;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
       display: none;
     }
   }
+
   &__photo {
     &:first-child {
       grid-column: 1/3;

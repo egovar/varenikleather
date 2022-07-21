@@ -2,7 +2,7 @@
   <div class="app">
     <AppHeader />
     <main class="main">
-      <div class="container">
+      <div class="my-container">
         <Nuxt />
       </div>
     </main>

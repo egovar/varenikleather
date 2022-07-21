@@ -34,6 +34,10 @@ export default {
       type: String,
       default: 'landing',
     },
+    productId: {
+      type: String,
+      required: false,
+    },
   },
   data() {
     return {
@@ -50,7 +54,10 @@ export default {
   methods: {
     path(size) {
       // 'small' | 'medium' | 'large'
-      return `/img/${this.folder}/${this.picture.name}/${this.picture.name}-${size}.${this.picture.type}`;
+      if (this.folder === 'landing') {
+        return `/img/${this.folder}/${this.picture.name}/${this.picture.name}-${size}.${this.picture.type}`;
+      }
+      return `/img/${this.folder}/${this.productId}/${this.picture.name}.${this.picture.type}`;
     },
   },
 };
@@ -60,6 +67,7 @@ export default {
 .adaptive-picture {
   display: block;
   background-color: $placeholder-color;
+
   > img {
     display: block;
     width: 100%;

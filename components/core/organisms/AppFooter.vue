@@ -19,11 +19,17 @@
           </a>
         </div>
       </div>
-      <form id="form" class="footer__form">
-        <Input v-model="name" label="Имя" />
-        <Input v-model="phone" label="Телефон" />
+      <form id="form" class="footer__form" @submit="sendOrder">
+        <Input v-model="name" label="Имя" required />
+        <Input v-model="phone" label="Телефон" required />
         <Input v-model="comment" label="Комментарий" />
-        <Btn text="Отправить" class="footer__btn" disabled />
+        <Btn
+          text="Отправить"
+          class="footer__btn"
+          type="submit"
+          :disabled="formDisabled"
+          @click="sendOrder"
+        />
         <p class="footer__private-info-warning">
           Отправляя эту форму, Вы соглашаетесь с правилами обработки
           персональных данных
@@ -38,6 +44,7 @@ import Input from '@/components/core/molecules/Input';
 import Btn from '@/components/core/atoms/Btn';
 
 import socialMedia from '@/const/socialMedia';
+import { createOrder } from '@/api/orders';
 
 export default {
   name: 'AppFooter',
@@ -48,7 +55,34 @@ export default {
       name: '',
       phone: '',
       comment: '',
+      loading: false,
     };
+  },
+  computed: {
+    order() {
+      return {
+        name: this.name,
+        phone: this.phone,
+        comment: this.comment,
+      };
+    },
+    formDisabled() {
+      return !this.phone || !this.name || !!this.loading;
+    },
+  },
+  methods: {
+    async sendOrder() {
+      this.loading = true;
+      await createOrder(this.order);
+      this.clearForm();
+      this.loading = false;
+      alert('Спасибо за заявку! Мы скоро свяжемся с Вами!');
+    },
+    clearForm() {
+      this.name = '';
+      this.phone = '';
+      this.comment = '';
+    },
   },
 };
 </script>

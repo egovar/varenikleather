@@ -1,14 +1,15 @@
 <template>
-  <NuxtLink :to="`/products/${product.id}`" class="card">
+  <NuxtLink :to="`/products/${product.alias}`" class="card">
     <figure>
       <AdaptivePicture
-        :name="product.imgName"
-        :alt="product.imgAlt"
+        :product-id="product.alias"
+        :name="product.main_photo"
+        :alt="product.description"
         folder="products"
         class="card__photo"
       />
       <figcaption class="card__caption">
-        <h2 class="card__title">{{ product.title }}</h2>
+        <h2 class="card__title">{{ product.name }}</h2>
         <p class="card__price">От {{ product.price }} р.</p>
       </figcaption>
     </figure>
@@ -17,12 +18,12 @@
 
 <script>
 import AdaptivePicture from '@/components/core/molecules/AdaptivePicture';
+
 export default {
   name: 'Card',
   components: { AdaptivePicture },
   props: {
     product: {
-      // {id, title, price, imgName, imgAlt}
       type: Object,
       required: true,
     },
@@ -37,6 +38,7 @@ export default {
     height: 31.25rem;
     margin-bottom: 1.25rem;
   }
+
   &__title {
     font-size: 1.5rem;
     letter-spacing: 0.03em;
@@ -47,6 +49,7 @@ export default {
     margin-bottom: 0.125rem;
     font-weight: $bold-font-weight;
   }
+
   &__price {
     font-size: 1.5rem;
     letter-spacing: 0.03em;
