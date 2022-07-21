@@ -1,13 +1,11 @@
-import request from '@/api/request';
-import products from '@/const/products';
-import product from '@/const/product';
+import { _request } from '@/api/request';
+
 export async function getProducts(payload) {
-  // { page, pageSize, filters: { categories, colors }, sort: { type, direction } }
-  const res = await request('/products', products);
+  const res = await _request('/api/products');
   return res;
 }
 
-export async function getProductById(payload) {
-  const res = await request('/products/:id', product);
+export async function getProductById(id) {
+  const res = await _request(`/api/products/${id}`);
   return res;
 }

@@ -34,6 +34,10 @@ export default {
       type: String,
       default: 'landing',
     },
+    productId: {
+      type: String,
+      required: false,
+    },
   },
   data() {
     return {
@@ -43,9 +47,8 @@ export default {
   },
   computed: {
     picture() {
-      const [nameWithIndex, type] = this.name.split('.');
-      const [name, index] = nameWithIndex.split('-');
-      return { name, type, index };
+      const [name, type] = this.name.split('.');
+      return { name, type };
     },
   },
   methods: {
@@ -54,7 +57,7 @@ export default {
       if (this.folder === 'landing') {
         return `/img/${this.folder}/${this.picture.name}/${this.picture.name}-${size}.${this.picture.type}`;
       }
-      return `/img/${this.folder}/${this.picture.name}/${this.picture.index}/${this.picture.name}-${size}.${this.picture.type}`;
+      return `/img/${this.folder}/${this.productId}/${this.picture.name}.${this.picture.type}`;
     },
   },
 };
@@ -64,6 +67,7 @@ export default {
 .adaptive-picture {
   display: block;
   background-color: $placeholder-color;
+
   > img {
     display: block;
     width: 100%;

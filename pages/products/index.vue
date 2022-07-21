@@ -19,7 +19,8 @@ export default {
     };
   },
   async fetch() {
-    this.products = await getProducts();
+    const res = await getProducts();
+    this.products = res.products;
   },
 };
 </script>

@@ -3,7 +3,7 @@ const products = [
     id: 1,
     title: 'Абракадабра сим салабиm fdjbnerlanbvljjrnerg м ихахах',
     price: 2000,
-    imgName: 'cover-1.jpg',
+    imgName: 'cover-koshelek-klatch-setter-1658175237928.jpg',
     imgAlt: 'your momma',
   },
   {

@@ -22,8 +22,9 @@
       <AdaptivePicture
         v-for="(photo, i) in product.photos"
         :key="i"
+        :product-id="product.alias"
         :name="photo"
-        :alt="product.seoDescription"
+        :alt="product.description"
         folder="products"
         class="listing__photo"
       />
@@ -45,7 +46,12 @@ export default {
     };
   },
   async fetch() {
-    this.product = await getProductById();
+    this.product = await getProductById(this.productId);
+  },
+  computed: {
+    productId() {
+      return this.$route.params.id;
+    },
   },
   methods: {
     toForm() {
@@ -61,6 +67,7 @@ export default {
   //overflow: hidden;
   display: flex;
   margin-bottom: 6.25rem;
+
   &__info {
     width: 33.625rem;
     margin-right: 6.125rem;
@@ -103,25 +110,28 @@ export default {
   &__grid-label {
     font-weight: $bold-font-weight;
   }
+
   &__grid-value {
     &--underlined {
       text-decoration: underline;
     }
   }
+
   &__photos {
     height: 55rem;
     overflow: auto;
     display: grid;
-    grid-template-columns: repeat(2, 19.8125rem);
+    grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 25.125rem;
     gap: 1.25rem 1.875rem;
     overflow-x: hidden;
-    //-ms-overflow-style: none; /* IE and Edge */
-    //scrollbar-width: none; /* Firefox */
-    //&::-webkit-scrollbar {
-    //  display: none;
-    //}
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
+
   &__photo {
     &:first-child {
       grid-column: 1/3;
