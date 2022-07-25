@@ -79,5 +79,23 @@ export default {
       padding-bottom: 2.5rem;
     }
   }
+
+  @include media(tablet) {
+    &__title,
+    &__content {
+      max-width: 70%;
+    }
+  }
+  @include media(mobile) {
+    &__title,
+    &__content {
+      max-width: 90%;
+    }
+    &--active {
+      .item__content {
+        max-height: 30rem;
+      }
+    }
+  }
 }
 </style>

@@ -39,14 +39,15 @@ export default {
   display: flex;
   justify-content: space-between;
   &__text {
-    width: 41.6875rem;
-    font-size: 2.625rem;
+    width: 40%;
+    font-size: 1.875rem;
     line-height: 1.2142857;
-    font-family: $landing-title-font;
+    //font-family: $landing-title-font;
     font-weight: $landing-title-font-weight;
-    text-transform: uppercase;
+    //text-transform: uppercase;
   }
   &__items {
+    width: 50%;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: repeat(2, min-content);
@@ -59,6 +60,25 @@ export default {
     .contacts__icon {
       margin-right: 0.625rem;
       @include icons;
+    }
+  }
+
+  @include media(tablet) {
+    flex-direction: column;
+    align-items: stretch;
+    &__text {
+      width: 100%;
+    }
+    &__items {
+      margin-top: 2rem;
+      width: 80%;
+    }
+  }
+  @include media(mobile) {
+    margin: 6.5rem 0;
+    &__items {
+      display: flex;
+      flex-direction: column;
     }
   }
 }

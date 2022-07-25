@@ -141,5 +141,30 @@ export default {
     color: $secondary-text-color;
     margin: auto;
   }
+
+  @include media(tablet) {
+    &__form,
+    &__text,
+    &__icons {
+      width: 47%;
+    }
+  }
+  @include media(mobile) {
+    &__form,
+    &__text,
+    &__icons {
+      width: 100%;
+    }
+    &__container {
+      height: unset;
+    }
+    &__form {
+      order: 2;
+      margin: 2rem 0;
+    }
+    &__icons {
+      order: 3;
+    }
+  }
 }
 </style>

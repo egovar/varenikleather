@@ -21,10 +21,16 @@ export default {
 
 <style scoped lang="scss">
 .faq {
-  margin-top: 12.5rem;
+  margin-top: 9.5rem;
   margin-bottom: 5.625rem;
+
   &__title {
     @include section-title;
+  }
+
+  @include media(tablet) {
+    margin-top: 5.5rem;
+    margin-bottom: 3.25rem;
   }
 }
 </style>

@@ -52,17 +52,22 @@ export default {
   position: relative;
   padding: $input-padding 0;
   width: 100%;
+
   &__label {
     position: absolute;
-    top: $input-padding;
+    top: calc(#{$input-padding} + #{$input-base-padding});
     color: $secondary-text-color;
     transition: all $transition-style;
+
     &--focused {
       color: $main-text-color;
-      transform: translateY(-#{$input-padding});
+      transform: translateY(
+        calc(-1 * (#{$input-padding} + #{$input-base-padding} / 2))
+      );
       font-size: calc(#{$footer-font-size} / 2);
     }
   }
+
   &__subtext {
     font-size: calc(#{$footer-font-size} / 2);
     color: $secondary-text-color;

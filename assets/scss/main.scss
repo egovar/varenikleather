@@ -4,7 +4,9 @@ html {
 body {
   margin: 0;
   background-color: $main-bg-color;
+  //background-color: papayawhip;
   color: $main-text-color;
+  //color: #444444;
   font-family: $main-font;
   font-size: $main-font-size;
   font-weight: $main-font-weight;
@@ -38,4 +40,6 @@ svg {
 .my-container {
   width: 81.25rem;
   margin: auto;
+  //padding: 2rem;
+  //border: 2px solid #444444;
 }

@@ -36,6 +36,7 @@ export default {
 .accordion {
   border-top: 1px solid $main-text-color;
   border-bottom: 1px solid $main-text-color;
+
   &__item {
     &:not(:first-child) {
       border-top: 1px solid $main-text-color;

@@ -34,26 +34,35 @@ export default {
 <style scoped lang="scss">
 .card {
   &__photo {
-    width: 25rem;
-    height: 31.25rem;
-    margin-bottom: 1.25rem;
+    width: 100%;
+    height: 20rem;
+    margin-bottom: 0.625rem;
   }
 
   &__title {
-    font-size: 1.5rem;
+    width: 100%;
+    font-size: 1.125rem;
     letter-spacing: 0.03em;
     line-height: 1;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-bottom: 0.125rem;
+    margin-bottom: 0.25rem;
     font-weight: $bold-font-weight;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; // количество строк
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 2.25rem;
   }
 
   &__price {
-    font-size: 1.5rem;
+    width: 100%;
+    font-size: 1.125rem;
     letter-spacing: 0.03em;
     line-height: 1;
+  }
+  @include media(mobile) {
+    &__photo {
+      height: 12rem;
+    }
   }
 }
 </style>

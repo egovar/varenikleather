@@ -1,6 +1,7 @@
 <template>
   <div class="index">
     <Intro />
+    <MostPopular />
     <AboutUs />
     <FAQ />
   </div>
@@ -10,9 +11,10 @@
 import Intro from '@/components/Intro';
 import AboutUs from '@/components/AboutUs';
 import FAQ from '@/components/FAQ';
+import MostPopular from '@/components/MostPopular';
 export default {
   name: 'Index',
-  components: { FAQ, AboutUs, Intro },
+  components: { MostPopular, FAQ, AboutUs, Intro },
 };
 </script>
 

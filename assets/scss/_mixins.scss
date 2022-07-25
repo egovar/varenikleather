@@ -9,13 +9,17 @@
 
 @mixin section-title {
   margin-bottom: 3.125rem;
-  opacity: 0.3;
+  opacity: 0.6;
   font-weight: $main-font-weight;
   font-size: 1.75rem;
   line-height: 1.14286;
+  @include media(mobile) {
+    margin-bottom: 1.5rem;
+  }
 }
 
 @mixin link-with-arrow {
+  margin-top: 2rem;
   font-size: 1.5rem;
   line-height: 1.16;
   display: inline-flex;
@@ -26,6 +30,8 @@
     margin-left: 0.625rem;
     //fill: currentColor;
   }
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid currentColor;
 }
 
 @mixin icons {
@@ -55,5 +61,25 @@
 
   &--tt {
     width: 1.640625rem;
+  }
+}
+
+@mixin media($device) {
+  @if ($device == desktop) {
+    @media screen and (min-width: 1400px) {
+      @content;
+    }
+  } @else if ($device == tablet) {
+    @media screen and (max-width: 1399px) {
+      @content;
+    }
+  } @else if ($device == mobile) {
+    @media screen and (max-width: 749px) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: 750px) and (max-width: 1399px) {
+      @content;
+    }
   }
 }

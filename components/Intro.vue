@@ -19,7 +19,7 @@
     <div class="intro__part intro__part--right">
       <!--      <div class="intro__spot"></div>-->
       <AdaptivePicture
-        name="artisans.jpg"
+        name="intro.jpg"
         alt="Фото наших мастеров: Игоря и Надежды"
         class="intro__photo"
       />
@@ -29,6 +29,7 @@
 
 <script>
 import AdaptivePicture from '@/components/core/molecules/AdaptivePicture';
+
 export default {
   name: 'Intro',
   components: { AdaptivePicture },
@@ -46,9 +47,11 @@ export default {
     font-size: 5.5rem;
     font-weight: $landing-title-font-weight;
     text-transform: uppercase;
+
     > strong {
       @include highlighted(5.5rem);
     }
+
     > span {
       display: block;
       margin-left: 7.625rem;
@@ -57,18 +60,12 @@ export default {
 
   &__description {
     line-height: 1.22;
-    margin: 1.875rem 0 0.625rem;
+    margin: 1.875rem 0 0;
     max-width: 39.75rem;
   }
 
   &__link {
     @include link-with-arrow;
-  }
-
-  &__part {
-    &--right {
-      position: relative;
-    }
   }
 
   &__spot {
@@ -89,10 +86,48 @@ export default {
 
   &__photo {
     width: 25rem;
-    border-radius: 1.25rem;
+    //padding: 1.5rem;
+    border-radius: 1rem;
+    //border: 2px solid $main-text-color;
+    //background: transparent;
 
     ::v-deep(img) {
       border-radius: 1rem;
+    }
+  }
+
+  @include media(tablet) {
+    flex-direction: column;
+    align-items: stretch;
+    &__title {
+      font-size: 4rem;
+      text-align: center;
+      margin: 0 auto 3rem -3.8125rem;
+    }
+    &__description {
+      margin: auto;
+    }
+    &__photo {
+      width: 100%;
+      height: 40rem;
+      border-radius: 0;
+      ::v-deep(img) {
+        border-radius: 0;
+      }
+      margin-top: 2rem;
+    }
+    &__link {
+      display: none;
+    }
+  }
+  @include media(mobile) {
+    margin-top: 6.5rem;
+    &__title {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    &__photo {
+      height: 20rem;
     }
   }
 }

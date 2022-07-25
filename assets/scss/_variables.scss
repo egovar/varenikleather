@@ -1,24 +1,26 @@
-$main-bg-color: #212121;
-$main-text-color: #f0f0f0;
-$highlight-text-color: #ff0000;
+//$main-bg-color: #212121;
+$main-bg-color: papayawhip;
+//$main-text-color: #f0f0f0;
+$main-text-color: #444444;
+$highlight-text-color: #f03050;
 $placeholder-color: #c4c4c4;
-$secondary-text-color: rgba(255, 255, 255, 0.2);
-$main-font: Roboto, Arial, sans-serif;
+$secondary-text-color: #666666;
+$main-font: Montserrat, Arial, sans-serif;
 $main-font-size: 1.125rem;
-$main-font-weight: 300;
+$main-font-weight: 400;
 $landing-title-font-weight: 400;
 $landing-title-line-height: 1.216;
-$bold-font-weight: 500;
+$bold-font-weight: 600;
 $landing-title-font: 'Cormorant Infant', 'Times New Roman', serif;
 
-$footer-font-size: 1.5rem;
-$footer-padding-top: 3.125rem;
-$footer-padding-bottom: 5.25rem;
-$footer-form-height: 18.75rem;
+$footer-font-size: 1.15rem;
+$footer-padding-top: 1.75rem;
+$footer-padding-bottom: 3rem;
+$footer-form-height: 15.828125rem;
 $input-base-padding: 0.3125rem;
-$input-padding: 0.75rem;
+$input-padding: 0.575rem;
 $transition-style: 0.25s ease;
-$button-padding: 0.75rem;
+$button-padding: 0.575rem;
 $footer-height: calc(
   #{$footer-form-height} + #{$footer-padding-top} + #{$footer-padding-bottom}
 );
@@ -30,6 +32,7 @@ $header-padding-bottom-desktop: 3.125rem;
 $header-height-desktop: calc(
   #{$logo-height-desktop} + #{$header-padding-top-desktop} + #{$header-padding-bottom-desktop}
 );
+$header-font-size: 1.25rem;
 $content-min-height: calc(
   100vh - #{$header-height-desktop} - #{$footer-height}
 );

@@ -45,6 +45,7 @@ export default {
   transition: all $transition-style;
   &[disabled] {
     opacity: 0.2;
+    cursor: unset;
   }
   &:not([disabled]):hover {
     color: $main-bg-color;
