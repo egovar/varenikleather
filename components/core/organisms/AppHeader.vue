@@ -107,7 +107,7 @@ export default {
     top: 0;
     left: 0;
     background: $main-bg-color;
-    box-shadow: 0px -4px 50px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px -4px 50px 5px rgb(220, 150, 150, 0.2);
     z-index: 20;
 
     &__logo {

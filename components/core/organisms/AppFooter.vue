@@ -89,7 +89,7 @@ export default {
 
 <style scoped lang="scss">
 .footer {
-  box-shadow: 0px -4px 50px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px -4px 50px 5px rgb(220, 150, 150, 0.2);
   padding: $footer-padding-top 0 $footer-padding-bottom;
   font-size: $footer-font-size;
 
