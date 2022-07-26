@@ -1,28 +1,28 @@
 const socialMedia = [
   {
-    link: 'https://vk.com',
+    link: 'https://wa.me/79273830188',
     iconName: 'wa',
-    nickName: '+7(927)3830188',
+    nickName: '+7 (927) 383-01-88',
   },
   {
-    link: 'https://vk.com',
+    link: 'https://vk.com/public211953256',
     iconName: 'vk',
-    nickName: '@egovar',
+    nickName: 'Varenik Leather',
   },
   {
-    link: 'https://vk.com',
+    link: 'https://t.me/wiw_lether',
     iconName: 'tg',
-    nickName: '@egova',
+    nickName: 'Wiw-кожа',
   },
   {
-    link: 'https://vk.com',
+    link: 'https://instagram.com/houp08',
     iconName: 'ig',
-    nickName: '@egov',
+    nickName: '@houp08',
   },
   {
-    link: 'https://vk.com',
+    link: 'https://tiktok.com/@houp08tt',
     iconName: 'tt',
-    nickName: '@er',
+    nickName: '@houp08tt',
   },
 ];
 
