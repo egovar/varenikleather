@@ -4,7 +4,8 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'varenikleather',
+    title:
+      'Семейная мастерская Varenik Leather - качественные аксессуары из кожи на заказ',
     htmlAttrs: {
       lang: 'en',
     },
@@ -16,6 +17,16 @@ export default {
       },
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
+      {
+        name: 'description',
+        content:
+          'Лучший подарок на любой случай жизни! 100% ручная работа. Только натуральная кожа. Делаем сумки, кошельки, ремни и многое другое. Учтем все Ваши пожелания!',
+      },
+      {
+        name: 'keywords',
+        content:
+          'аксессуары,кожа,натуральная кожа,ручная работа,универсальный подарок,подарок маме,подарок папе,подарок мужу,подарок жене,подарок,мастерская,кошелек на заказ,сумка на заказ,ремень на заказ,обложка для паспорта на заказ,изделия из кожи на заказ,на заказ,кошелек ручной работы купить,сумка ручной работы купить,ремень ручной работы купить',
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' }],
   },
