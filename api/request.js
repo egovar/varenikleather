@@ -6,8 +6,12 @@ export default function request(path, response) {
 
 const root = 'https://varenik-leather.shop';
 
-export async function _request(path, method = 'GET') {
-  const res = await fetch(root + path, { method });
+export async function _request(path, method = 'GET', body, headers) {
+  const res = await fetch(root + path, {
+    method,
+    ...(!!body && { body }),
+    ...(!!headers && { headers }),
+  });
   if (res.ok) {
     const response = await res.json();
     return response;
