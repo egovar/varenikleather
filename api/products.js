@@ -11,8 +11,6 @@ export async function getProductById(id) {
 }
 
 export async function createProduct(multipart) {
-  const res = await _request(`/api/products`, 'POST', multipart, {
-    'Content-Type': 'multipart/form-data',
-  });
+  const res = await _request(`/api/products`, 'POST', multipart);
   return res;
 }
