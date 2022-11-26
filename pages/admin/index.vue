@@ -27,10 +27,14 @@ export default {
           text: 'Комментарий',
           value: 'comment',
         },
+        {
+          text: 'From page',
+          value: 'from_page',
+        },
       ],
     };
   },
-  async fetch() {
+  async mounted() {
     this.orders = await getOrders();
   },
 };
