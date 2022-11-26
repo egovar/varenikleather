@@ -1,31 +1,12 @@
-import request from '@/api/request';
+import { _request } from '@/api/request';
 
 export async function createOrder(payload) {
   // { name, phone, comment }
-  const res = await request('/requests/create', {
-    status: 200,
-    response: 'ok',
-  });
+  const res = await _request('/api/orders', 'POST', payload);
   return res;
 }
 
 export async function getOrders(payload) {
-  const res = await request('/requests/create', [
-    {
-      name: 'Егор',
-      phone: '89374155655',
-      comment: 'no comment',
-    },
-    {
-      name: 'Надежда',
-      phone: '89374155655',
-      comment: 'no comment',
-    },
-    {
-      name: 'Игорь',
-      phone: '89374155655',
-      comment: 'no comment',
-    },
-  ]);
+  const res = await _request('/api/orders');
   return res;
 }

@@ -64,6 +64,7 @@ export default {
         name: this.name,
         phone: this.phone,
         comment: this.comment,
+        page: this.$router.fullPath,
       };
     },
     formDisabled() {
@@ -73,10 +74,14 @@ export default {
   methods: {
     async sendOrder() {
       this.loading = true;
-      await createOrder(this.order);
-      this.clearForm();
-      this.loading = false;
-      alert('Спасибо за заявку! Мы скоро свяжемся с Вами!');
+      const { ok } = await createOrder(this.order);
+      if (ok) {
+        this.clearForm();
+        this.loading = false;
+        alert('Спасибо за заявку! Мы скоро свяжемся с Вами!');
+      } else {
+        alert('Произошла ошибка. Пожалуйста, сообщите нам об этом');
+      }
     },
     clearForm() {
       this.name = '';

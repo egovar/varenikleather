@@ -32,7 +32,7 @@ export default {
   },
   async fetch() {
     const res = await getProducts();
-    this.products = res.products;
+    this.products = res.products.slice(0, 4);
   },
 };
 </script>
