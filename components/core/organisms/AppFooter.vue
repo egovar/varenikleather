@@ -64,7 +64,7 @@ export default {
         name: this.name,
         phone: this.phone,
         comment: this.comment,
-        page: this.$router.fullPath,
+        page: window.location.href,
       };
     },
     formDisabled() {

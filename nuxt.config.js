@@ -5,7 +5,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title:
-      'Семейная мастерская Varenik Leather - качественные аксессуары из кожи на заказ',
+      'Подарки для самых любимых и близких — изделия из кожи от мастерской Varenik Leather',
     htmlAttrs: {
       lang: 'en',
     },
