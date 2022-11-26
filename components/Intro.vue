@@ -2,8 +2,8 @@
   <section class="intro">
     <div class="intro__part intro__part--left">
       <h1 class="intro__title">
-        <strong>Семейная</strong>
-        <span>мастерская</span>
+        <strong>Идеальный</strong>
+        <span>подарок</span>
       </h1>
       <p class="intro__description">
         Для любимого человека нужны особые подарки! Конечно, можно подарить
